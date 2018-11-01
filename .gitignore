@@ -1,0 +1,22 @@
+# Intellij IDEA files
+.idea
+*.iml
+*.ipr
+*.iws
+
+
+
+# Python bytecode
+*.pyc
+*.egg-info
+
+# Distribution folder
+dist/
+
+# Notebook checkpoints
+.ipynb_checkpoints
+
+# Configuration files
+*.conf
+
+
