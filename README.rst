@@ -2,27 +2,32 @@
 README
 ======
 
-This folder contains the code used for
-.. "Oriol Pich, Ferran Muiños, Radhakrishnan Sabarinathan, Iker Reyes-Salazar, Abel Gonzalez-
-Perez, Nuria Lopez-Bigas, Somatic and germline mutation periodicity follow the orientation of the DNA minor
-groove around nucleosomes, Cell (2018) doi: 10.1016/j.cell.2018.10.004 "
+This folder contains the code used for `10.1016/j.cell.2018.10.004 <https://doi.org/10.1016/j.cell.2018.10.004>`_.
+If you use this code in a publication, please cite:
+
+.. admonition:: Citation
+   :class: note
+
+   Oriol Pich, Ferran Muiños, Radhakrishnan Sabarinathan, Iker Reyes-Salazar, Abel Gonzalez-Perez,
+   Nuria Lopez-Bigas, Somatic and germline mutation periodicity follow the orientation of the DNA minor
+   groove around nucleosomes, Cell (2018) doi: `10.1016/j.cell.2018.10.004 <https://doi.org/10.1016/j.cell.2018.10.004>`_
 
 
 
 A brief description of the structure of this repo:
 
-- **accessibility**: accessibility data analysis
-- **ancestral**: ancestral states analysis
-- **damage**: damage data (UV and NMP) analysis
-- **figures**: code to generate the figures and tables for the paper
-- **germline**: germline data analysis
-- **increase**: code for the increase of mutation rate analysis
-- **mutations**: mutational data analysis
-- **nucleosomes**: computation of the dyads positions
-- **periodicity**: WW periodicity analysis
-- **rotational**: rotational classification of the nucleosomes
-- **signatures**: analysis of the signatures of the mutational data
-- **simulation**: simulation
+- `accessibility <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/accessibility/accessibility.ipynb>`_: accessibility data analysis
+- `ancestral <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/ancestral/ancestral.ipynb>`_: ancestral states analysis
+- `damage <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/damage/damage.ipynb>`_: damage data (UV and NMP) analysis
+- `figures <https://bitbucket.org/bbglab/nucleosome-periodicity/src/master/figures/>`_: code to generate the figures and tables for the paper
+- `germline <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/germline/germline.ipynb>`_: germline data analysis
+- `increase <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/increase/increase.ipynb>`_: code for the increase of mutation rate analysis
+- `mutations <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/mutations/mutations.ipynb>`_:  mutational data analysis
+- `nucleosomes <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/nucleosomes/nucleosomes.ipynb>`_:  computation of the dyads positions
+- `periodicity <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/periodicity/periodicity.ipynb>`_:  WW periodicity analysis
+- `rotational <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/rotational/rotational.ipynb>`_:  rotational classification of the nucleosomes
+- `signatures <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/signatures/signatures.ipynb>`_:  analysis of the signatures of the mutational data
+- `simulation <http://nbviewer.jupyter.org/urls/bitbucket.org/bbglab/nucleosome-periodicity/raw/master/simulation/simulation.ipynb>`_:  simulation
 
 Each folder contains a notebook with a brief description and
 the requirements (notebooks that need to be executed).
@@ -161,3 +166,4 @@ After installing the package, update the file
 
 .. [#envsigfit] This package has been installed in a separate environment
    named as ``env_sigfit``
+
