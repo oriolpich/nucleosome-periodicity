@@ -96,7 +96,7 @@ def cli(species, output, regions, cores, kmer):
 
     if regions is None:
         group = [n.replace('.txt', '') for n in os.listdir(bgdata.get_path('datasets', 'genomereference', species))
-                 if not n.startswith('.') and not n.startswith('chrM')]
+                 if not n.startswith('.') and not n.startswith('chrM') and not n.startswith('chr23') and not n.startswith('chr24')]
         
         f = functools.partial(get_full_composition, species=species, kmer_len=kmer)
     else:

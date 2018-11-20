@@ -12,7 +12,7 @@ If you use this code in a publication, please cite:
    Nuria Lopez-Bigas, Somatic and germline mutation periodicity follow the orientation of the DNA minor
    groove around nucleosomes, Cell (2018) doi: `10.1016/j.cell.2018.10.004 <https://doi.org/10.1016/j.cell.2018.10.004>`_
 
-
+The exact version for reproducing the results is under the Tag Paper. Further improvements in the code can be found in the master branch.
 
 A brief description of the structure of this repo:
 

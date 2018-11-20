@@ -3,7 +3,7 @@ import tempfile
 
 import click
 import pandas as pd
-
+import io
 
 def get_closer_maxima(fin, fout):
     """
@@ -32,7 +32,8 @@ def get_closer_maxima(fin, fout):
     df.to_csv(intersected_file_sorted.name, sep='\t', header=False, index=False, compression='gzip')
 
     done = set()
-    with gzip.open(intersected_file_sorted.name, 'rt') as infile, gzip.open(fout, 'wt') as outfile:
+    keep_lines = []
+    with gzip.open(intersected_file_sorted.name, 'rt') as infile:
         for line in infile:
             line_spl = line.rstrip().split('\t')
 
@@ -42,10 +43,29 @@ def get_closer_maxima(fin, fout):
                 # write it in the file
                 out = '{}\t{}\t{}\t{}\t{}\t{}\n'.format(line_spl[0], line_spl[1], line_spl[2], line_spl[3], line_spl[8],
                                                         line_spl[10])
-                outfile.write(out)
+                keep_lines.append(out)
 
                 # add it to the black list to avoid two dyads within one dyad.
                 done.add(line_spl[7])
+
+    # remove putative overlapping nucleosomes
+    selected = pd.read_csv(io.StringIO('\n'.join(keep_lines)), delim_whitespace=True)
+    set_data = set()
+    for chrom, data in selected.groupby(by='chr', sort=False):
+        forbidden = set()
+        for i, row in data.iterrows():
+            p2 = row['p2']
+            if p2 not in forbidden:
+                set_data.add(i)
+
+                # set of forbidden positions around the dyad
+                for p in range(p2 - 147, p2 + 148):
+                    forbidden.add(p)
+
+    non_overlapp = selected.loc[set_data]
+    non_overlapp.to_csv(fout, sep='\t', header=False, index=False,
+                        compression='gzip')
+
 
 
 @click.command()
