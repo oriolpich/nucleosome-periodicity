@@ -34,7 +34,7 @@ do
     ret=$?
     if [ $ret -eq 3 ]
     then
-        echo "File ${file} does not have enough mutations in any sample"
+        echo "File ${mut_file} does not have enough mutations in any sample"
         continue
     fi
 
