@@ -48,8 +48,10 @@ def get_closer_maxima(fin, fout):
                 # add it to the black list to avoid two dyads within one dyad.
                 done.add(line_spl[7])
 
-    # remove putative overlapping nucleosomes
-    selected = pd.read_csv(io.StringIO('\n'.join(keep_lines)), delim_whitespace=True)
+    # remove around 1% putative overlapping nucleosomes. Be aware this is a fix introduced after the Tag Paper was created
+    selected = pd.read_csv(io.StringIO('\n'.join(keep_lines)), delim_whitespace=True,
+                           names = ["chr","p1","p2","reads","smoothing_score","distance"])
+
     set_data = set()
     for chrom, data in selected.groupby(by='chr', sort=False):
         forbidden = set()
